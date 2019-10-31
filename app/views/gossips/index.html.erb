@@ -1,93 +1,86 @@
- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+ 
+<!-- _______________END NAVBAR___________________________-->
+<!-- create with boostrap code-->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
   <a class="navbar-brand" href="#">The Gossip Project</a>
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+  <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="http://localhost:3000/team" href="#">Team <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-      <a class= "lala"> <a class=" http://localhost:3000/contact" href="#">Contact</a> 
-      </li>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        
+        <li class="nav-item active">
+        <a class="http://localhost:3000/team" href="http://localhost:3000/team">Team <span class="sr-only">(current)</span></a>
+        </li>
 
-      <li class="nav-item">
-      </li>
-    </ul>
-    
-  </div>
+              <li class="nav-item">
+              <a class= "lala"> <a class="t" href="http://localhost:3000/contact">Contact</a> 
+              </li>
+              <li class="nav-item"></li>
+      </ul>
+    </div>
+
 </nav>
 
 
+<!-- _______________TEXT + IMAGE___________________________-->
+
+    <div class="card">
+
 <body style="background-color:#FFDD51;">
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
 
-<div class="jumbotron jumbotron-fluid">
-  <div class="container">
-              <div class="row">
-
-
-<a href="http://zupimages.net/viewer.php?id=19/44/lli1.png"><img src="https://zupimages.net/up/19/44/lli1.png" alt="" /></a>
-
-
-    <h2> Hello <%= @first_name %> ! </h2>
-
-
-
+    <div class="img">
+    <a href="http://zupimages.net/viewer.php?id=19/44/u28y.jpg"><img src="https://zupimages.net/up/19/44/u28y.jpg" alt="" /></a>
+    </div>
 
   </div>
+    <div class="card">
+<center>
+    <h2> Hello <%= @first_name %> ! Tu as un gossip à partager ? 
 
-
-
-    <h3> Tu veux créer un gossip ? <a href="<%= new_gossip_path %> "class="btn btn-success"> Créer un gossip </a >  </h3>
-
-
- 
-  <div> 
-    <h2>Les derniers gossips créés... </h2>
-  <div>
-      </div>
-
-
-</div>
-
-
-      <div class="container">
-      <div class="row">
-   
-            <%Gossip.all.each do |gossip|%>
-
-
-          
-                    <div class="card-deck col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                    <div class="card">
-                    <div class="card-header"> Gossip #<%=gossip.id%> </div>
-                    <div class="card-body align-center">
-
-                        <blockquote class="blockquote mb-0">
-                        <p><%=gossip.title%></p>
-                        </blockquote>
-
-
-                    </div>
-                            <footer class="blockquote-footer">
-                                      <div class="row justify-content-between align-self-center mx-3">
-                                        <!-- <p><%=User.find(gossip.user_id).first_name%> <%=User.find(gossip.user_id).last_name%></p> -->
-                                        <a class="btn btn-warning" <%= link_to "Voir le gossip", gossip_path(gossip.id)%>
-
-                                         </a>
-                                      </div>
-                        </footer>
-                    
-                    </div> 
-                    </div>
-         <%end%>
+      <div><a href="<%= new_gossip_path %> "class="btn btn-success"> Créer un gossip </a >  </h2> </div>
+</center>
+    <div> 
+      <center>
+    <h3>Les derniers gossips créés... </h3>
+    </center>
+    <div>
 
     </div>
-         
-     </div>
+    </div>
 
-       
-​ </body>
+
+<!-- _______________GOSSIP INDEX - GENERATE WITH FAKER___________________________-->
+
+
+
+    <div class="container">
+    <div class="row">
+    <%Gossip.all.each do |gossip|%>
+    <div class="card-deck col-xs-12 col-sm-12 col-md-4 col-lg-4">
+    <div class="card">
+    <div class="card-header"> Gossip #<%=gossip.id%> </div>
+    <div class="card-body align-center">
+    <blockquote class="blockquote mb-0">
+    <p><%=gossip.title%></p>
+    </blockquote>
+    </div>
+    <footer class="blockquote-footer">
+    <div class="row justify-content-between align-self-center mx-3">
+    <a class="btn btn-warning" <%= link_to "Voir le gossip", gossip_path(gossip.id)%>
+    </a>
+    </div>
+    </footer>
+    </div> 
+    </div>
+    <%end%>
+    </div>
+  </div>
+​</body>
 
