@@ -1,0 +1,29 @@
+
+
+ v
+<!------_________GOSSIP EDIT FORM_______---->
+
+ <div class="card" style="width: 18rem;">
+
+
+  <div class="container">
+  <h1> Éditer le potin</h1>
+
+<%= link_to 'Revenir au potin', gossip_path %>
+
+        <%= form_for :gossip, url: gossip_path do |f| %>
+          <p>
+             <h5 class="card-title"> <%= f.label :Titre %><br> </h5>
+            <%= f.text_field :title %>
+          </p>
+
+          <p>
+            <%= f.label :Contenu %><br>
+            <%= f.text_area :content %>
+          </p>
+
+         <%= link_to "Edit your gossip", gossip_path, class: "btn btn-warning", method: :patch %>
+        <% end %>
+
+
+</div>

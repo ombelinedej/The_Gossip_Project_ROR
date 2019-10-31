@@ -1,0 +1,28 @@
+
+
+
+ <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= @gossip.title %> </h5>
+    <h6 class="card-subtitle mb-2 text-muted"><%= @gossip.id %></h6>
+    <p class="card-text"> <%= @gossip.content %> </p>
+    <p class="card-text"> <%= @user%> </p>
+
+
+
+    <a href="<%= edit_gossip_path %>" class="card-link">Modifier</a>
+    <a href="#" class="card-link">Supprimer</a>
+
+  </div>
+</div>
+
+ 
+<div class="card" style="width: 18rem;">
+
+<a href="<%= gossips_path %> " class= "btn btn-warning"> Revenir à la page d'accueil avec tous les potins</a>
+
+ </div>
+
+
+
+
